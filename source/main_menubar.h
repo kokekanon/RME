@@ -157,7 +157,12 @@ namespace MenuBar {
 		EXTENSIONS,
 		GOTO_WEBSITE,
 		ABOUT,
-
+		SEARCH_ON_MAP_DUPLICATE,
+		SEARCH_ON_SELECTION_DUPLICATE,
+		REMOVE_ON_MAP_DUPLICATE_ITEMS,
+		REMOVE_ON_SELECTION_DUPLICATE_ITEMS,
+		SEARCH_ON_MAP_WALLS_UPON_WALLS,
+		SEARCH_ON_SELECTION_WALLS_UPON_WALLS,
 		EXPERIMENTAL_FOG,
 	};
 }
@@ -293,12 +298,23 @@ public:
 	void OnGotoWebsite(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
 
+	void OnSearchForDuplicateItemsOnMap(wxCommandEvent& event);
+	void OnSearchForDuplicateItemsOnSelection(wxCommandEvent& event);
+	void OnRemoveForDuplicateItemsOnMap(wxCommandEvent& event);
+	void OnRemoveForDuplicateItemsOnSelection(wxCommandEvent& event);
+	void OnSearchForWallsUponWallsOnMap(wxCommandEvent& event);
+	void OnSearchForWallsUponWallsOnSelection(wxCommandEvent& event);
+
+
 protected:
 	// Load and returns a menu item, also sets accelerator
 	wxObject* LoadItem(pugi::xml_node node, wxMenu* parent, wxArrayString& warnings, wxString& error);
 	// Checks the items in the menus according to the settings (in config)
 	void LoadValues();
 	void SearchItems(bool unique, bool action, bool container, bool writable, bool zones, bool onSelection = false);
+	void SearchDuplicatedItems(bool onSelection = false);
+	void RemoveDuplicatesItems(bool onSelection = false);
+	void SearchWallsUponWalls(bool onSelection = false);
 
 protected:
 	MainFrame* frame;

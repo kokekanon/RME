@@ -313,6 +313,13 @@ public:
 		return g_items[id].isMetaItem();
 	}
 
+	bool hasElevation() const {
+		return g_items[id].hasElevation;
+	}
+	bool isBlockMissiles() const {
+		return g_items[id].blockMissiles;
+	}
+
 	// Slot-based Item Types
 	bool isWeapon() const {
 		uint8_t weaponType = g_items[id].weapon_type;
