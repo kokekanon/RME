@@ -173,6 +173,7 @@
 		<separator/>
 		<item name="Show zones" hotkey="Shift+N" action="SHOW_ZONES" help="Show zones on the map."/>
 		<item name="Show creatures" hotkey="F" action="SHOW_CREATURES" help="Show creatures on the map."/>
+		<item name="Show spawn creature list" hotkey="Shift+S" action="SHOW_SPAWN_CREATURESLIST" help="Shows which and how many creatures are in the spawn"/>
 		<item name="Show spawns" hotkey="S" action="SHOW_SPAWNS" help="Show spawns on the map."/>
 		<item name="Show special" hotkey="E" action="SHOW_SPECIAL" help="Show special tiles on the map, like PZ."/>
 		<item name="Show houses" hotkey="Ctrl+H" action="SHOW_HOUSES" help="Show houses on the map."/>
@@ -181,6 +182,7 @@
 		<item name="Show waypoints" hotkey="Shift+W" action="SHOW_WAYPOINTS" help="Show waypoints."/>
 		<separator/>
 		<item name="Highlight Items" hotkey="V" action="HIGHLIGHT_ITEMS" help="Highlight tiles with items on them."/>
+		<item name="Show Technical Items" hotkey="Shift+T" action="SHOW_TECHNICAL_ITEMS" help="Shows some of special items that are not visible in game."/>
 		<item name="Highlight Locked Doors" hotkey="U" action="HIGHLIGHT_LOCKED_DOORS" help="Highlight doors that require key to open."/>
 		<item name="Show Wall Hooks" hotkey="K" action="SHOW_WALL_HOOKS" help="Show indicators for wall hooks."/>
 	</menu>

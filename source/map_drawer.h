@@ -75,6 +75,7 @@ struct DrawingOptions {
 	bool show_special_tiles;
 	bool show_zone_areas;
 	bool show_items;
+	bool show_spawn_creatureslist;
 
 	bool highlight_items;
 	bool highlight_locked_doors;

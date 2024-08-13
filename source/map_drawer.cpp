@@ -92,6 +92,7 @@ void DrawingOptions::SetDefault() {
 	show_light_str = true;
 	show_tech_items = true;
 	show_waypoints = true;
+	show_tech_items = false;
 	ingame = false;
 	dragging = false;
 
@@ -99,6 +100,7 @@ void DrawingOptions::SetDefault() {
 	show_all_floors = true;
 	show_creatures = true;
 	show_spawns = true;
+	show_spawn_creatureslist = true;
 	show_houses = true;
 	show_shade = true;
 	show_special_tiles = true;
@@ -125,6 +127,7 @@ void DrawingOptions::SetIngame() {
 	show_light_str = false;
 	show_tech_items = false;
 	show_waypoints = false;
+	show_tech_items = true;
 	ingame = true;
 	dragging = false;
 
@@ -132,6 +135,7 @@ void DrawingOptions::SetIngame() {
 	show_all_floors = true;
 	show_creatures = true;
 	show_spawns = false;
+	show_spawn_creatureslist = false;
 	show_houses = false;
 	show_shade = false;
 	show_special_tiles = false;
@@ -1769,6 +1773,32 @@ void MapDrawer::DrawTile(TileLocation* location) {
 					BlitSpriteType(draw_x, draw_y, SPRITE_SPAWN, 128, 128, 128);
 				} else {
 					BlitSpriteType(draw_x, draw_y, SPRITE_SPAWN, 255, 255, 255);
+				}
+
+				if (options.show_spawn_creatureslist && map_z == floor) {
+					int32_t radius = tile->spawn->getSize();
+					std::unordered_map<std::string, int32_t> creatureCount;
+
+					const Position& spawnPosition = tile->getPosition();
+
+					for (int32_t dy = -radius; dy <= radius; ++dy) {
+						for (int32_t dx = -radius; dx <= radius; ++dx) {
+							Tile* creature_tile = editor.getMap().getTile(spawnPosition + Position(dx, dy, 0));
+							if (creature_tile) {
+								Creature* creature = creature_tile->creature;
+								if (creature) {
+									++creatureCount[creature->getName()];
+								}
+							}
+						}
+					}
+
+					std::string monsterText = "";
+					for (const auto& creature : creatureCount) {
+						monsterText += creature.first + " " + std::to_string(creature.second) + "x\n";
+					}
+
+					MakeTooltip(draw_x, draw_y, monsterText, 0, 255, 0);
 				}
 			}
 

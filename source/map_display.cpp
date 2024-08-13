@@ -199,6 +199,7 @@ void MapCanvas::OnPaint(wxPaintEvent& event) {
 			options.transparent_items = g_settings.getBoolean(Config::TRANSPARENT_ITEMS);
 			options.show_ingame_box = g_settings.getBoolean(Config::SHOW_INGAME_BOX);
 			options.show_lights = g_settings.getBoolean(Config::SHOW_LIGHTS);
+			options.show_tech_items = g_settings.getBoolean(Config::SHOW_TECHNICAL_ITEMS);
 			options.show_light_str = g_settings.getBoolean(Config::SHOW_LIGHT_STR);
 			options.show_tech_items = g_settings.getBoolean(Config::SHOW_TECHNICAL_ITEMS);
 			options.show_waypoints = g_settings.getBoolean(Config::SHOW_WAYPOINTS);
@@ -207,6 +208,7 @@ void MapCanvas::OnPaint(wxPaintEvent& event) {
 			options.show_all_floors = g_settings.getBoolean(Config::SHOW_ALL_FLOORS);
 			options.show_creatures = g_settings.getBoolean(Config::SHOW_CREATURES);
 			options.show_spawns = g_settings.getBoolean(Config::SHOW_SPAWNS);
+			options.show_spawn_creatureslist = g_settings.getBoolean(Config::SHOW_SPAWN_CREATURESLIST);
 			options.show_houses = g_settings.getBoolean(Config::SHOW_HOUSES);
 			options.show_shade = g_settings.getBoolean(Config::SHOW_SHADE);
 			options.show_special_tiles = g_settings.getBoolean(Config::SHOW_SPECIAL_TILES);
