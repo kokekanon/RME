@@ -57,8 +57,10 @@ cmake-build-debug/
 
 # Notepad++
 *.bak
-/vcproj/.vs
-/vcproj/.vs
-/vcproj/.vs/Editor
+vcproj/.vs
+vcproj/.vs
+vcproj/.vs/Editor
+data/800
 /data/800
+data/860
 /data/860
